@@ -14,7 +14,7 @@ func (u *user) getName() string {
 }
 
 func main() {
-	name, err := createUser()
+	name, err := CreateUser()
 	if err != nil {
 		err = fmt.Errorf("Couldn`t get user`s name. %s", err)
 		fmt.Println(err)
@@ -23,7 +23,7 @@ func main() {
 	}
 }
 
-func createUser() (name string, err error) {
+func CreateUser() (name string, err error) {
 	defer func() {
 		if r := recover(); r != nil {
 			err = r.(error)
